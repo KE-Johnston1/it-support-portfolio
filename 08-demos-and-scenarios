@@ -1,1 +1,193 @@
+# Demos & Scenarios
+
+A collection of practical demonstrations and real-world scenarios showcasing troubleshooting, communication, and technical workflows across IT Support, Microsoft 365, networking, identity, and security.
+
+---
+
+# 🖥️ 1. Windows Demo – Outlook Not Opening
+
+## 🎯 Scenario
+User reports:
+> “Outlook won’t open. It just hangs on the loading screen.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Check Task Manager → Outlook running in background  
+2. End all Outlook processes  
+3. Run:
+outlook.exe /safe
+4. Disable add-ins  
+5. Repair Office installation  
+6. Recreate Outlook profile  
+
+## 📝 Model Ticket Note
+Outlook failing to launch due to corrupted add-in. Launched in Safe Mode, disabled add-ins, and recreated profile. User confirmed Outlook loading normally. Issue resolved.
+
+---
+
+# 🌐 2. Networking Demo – No Internet on Wi‑Fi
+
+## 🎯 Scenario
+User reports:
+> “Wi‑Fi says connected but I can’t access the internet.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Run:
+ipconfig /all
+→ APIPA address (169.254.x.x)  
+2. Restart router  
+3. Forget and reconnect to Wi‑Fi  
+4. Renew IP:
+ipconfig /release
+ipconfig /renew
+5. Test DNS:
+nslookup google.com
+
+## 📝 Model Ticket Note
+User receiving APIPA address due to DHCP failure. Restarted router and renewed IP. Device obtained valid address and internet restored. Issue resolved.
+
+---
+
+# 🔐 3. Identity Demo – MFA Reset & Re‑Registration
+
+## 🎯 Scenario
+User reports:
+> “I got a new phone and now I can’t approve MFA prompts.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Admin Centre → User → Authentication Methods  
+2. Remove old phone  
+3. Add temporary phone number (if allowed)  
+4. Force re‑registration  
+5. User signs in → sets up Authenticator app  
+
+## 📝 Model Ticket Note
+User unable to receive MFA prompts after device change. Removed old authentication methods and forced re‑registration. User successfully configured new device. Issue resolved.
+
+---
+
+# 📁 4. OneDrive Demo – Sync Issues
+
+## 🎯 Scenario
+User reports:
+> “My OneDrive isn’t syncing and files show a red X.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Check OneDrive status  
+2. Reset OneDrive:
+%localappdata%\Microsoft\OneDrive\onedrive.exe /reset
+3. Sign out/in  
+4. Check file path length  
+5. Check storage quota  
+
+## 📝 Model Ticket Note
+OneDrive sync corrupted. Reset client and re-authenticated user. Sync resumed successfully. Issue resolved.
+
+---
+
+# 🍎 5. macOS Demo – Keychain Password Mismatch
+
+## 🎯 Scenario
+User reports:
+> “After changing my password, my Mac keeps asking for the old one.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Open Keychain Access  
+2. Search for “Microsoft” and “Exchange”  
+3. Delete outdated entries  
+4. Restart device  
+5. Re-authenticate apps  
+
+## 📝 Model Ticket Note
+macOS Keychain storing outdated credentials after password change. Removed old entries and restarted device. User able to sign in normally. Issue resolved.
+
+---
+
+# 📱 6. Mobile Demo – Outlook Not Syncing (Android)
+
+## 🎯 Scenario
+User reports:
+> “My Outlook app isn’t receiving new emails.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Check battery optimisation settings  
+2. Clear Outlook cache  
+3. Remove and re-add account  
+4. Check Company Portal compliance  
+5. Restart device  
+
+## 📝 Model Ticket Note
+Outlook not syncing due to battery optimisation blocking background activity. Disabled optimisation and cleared cache. Sync restored.
+
+---
+
+# 🛡️ 7. Security Demo – Phishing Email Investigation
+
+## 🎯 Scenario
+User reports:
+> “I clicked a suspicious link in an email.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Reset user password  
+2. Revoke sessions  
+3. Check sign‑in logs for unusual activity  
+4. Block sender domain  
+5. Report to security team  
+6. Educate user  
+
+## 📝 Model Ticket Note
+User clicked phishing link. Reset password, revoked sessions, and checked sign‑in logs. No suspicious activity detected. Blocked sender and advised user on phishing awareness.
+
+---
+
+# 🧪 8. Cross‑Platform Demo – Teams Not Loading (Browser)
+
+## 🎯 Scenario
+User reports:
+> “Teams won’t load in Chrome.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Clear cache/cookies  
+2. Disable extensions  
+3. Test in Incognito  
+4. Check third‑party cookie settings  
+5. Try Edge as fallback  
+
+## 📝 Model Ticket Note
+Teams failing to load due to Chrome blocking third‑party cookies. Enabled cookies and cleared cache. Teams loaded successfully.
+
+---
+
+# 🧠 9. Advanced Scenario – VPN Connected but No Access to Internal Apps
+
+## 🎯 Scenario
+User reports:
+> “VPN connects but I can’t access the shared drive or internal apps.”
+
+## 🔧 Troubleshooting Steps (Demo)
+1. Check routing:
+route print
+2. Ping internal server  
+3. Check DNS suffix  
+4. Flush DNS:
+ipconfig /flushdns
+5. Restart VPN client  
+
+## 📝 Model Ticket Note
+VPN connected but internal resources unreachable due to missing DNS suffix. Restarted VPN client and flushed DNS. Access restored.
+
+---
+
+# 📚 Related Pages
+
+- Ticketing Scenarios  
+- Cross‑Platform Support  
+- Identity & Access  
+- Security Awareness  
+- Networking Basics  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Demos & Scenarios section.
 
