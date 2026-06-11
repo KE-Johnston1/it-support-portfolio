@@ -1,1 +1,250 @@
+# Ticketing Scenarios – Realistic Service Desk Tickets & Model Responses
 
+A collection of real-world IT support tickets demonstrating clear troubleshooting, communication, documentation, and escalation practices across Windows, M365, networking, identity, hardware, and security.
+
+---
+
+# 🖥️ WINDOWS & DEVICE ISSUES
+
+## 📝 Scenario 1 — “My laptop is extremely slow today”
+
+### **User Report**
+> “Everything is taking ages to load. Outlook freezes and Teams lags.”
+
+### **Troubleshooting Steps**
+1. Check Task Manager → high CPU from browser tabs  
+2. Restart device  
+3. Clear temp files  
+4. Check Windows Updates  
+5. Check disk health:
+chkdsk /scan
+6. Check OneDrive sync status  
+
+### **Resolution**
+- Device had 100% disk usage due to Windows Search indexing  
+- Restart + index rebuild resolved issue  
+
+### **Ticket Note (Model Answer)**
+User reported slow performance. Identified high disk usage from Windows Search. Restarted device and rebuilt index. Performance normal after reboot. Issue resolved.
+
+---
+
+## 📝 Scenario 2 — “My screen keeps flickering”
+
+### **Troubleshooting Steps**
+1. Update display drivers  
+2. Check refresh rate  
+3. Test external monitor  
+4. Disable hardware acceleration in Teams/Chrome  
+
+### **Resolution**
+- Outdated Intel graphics driver  
+- Updated driver → flickering stopped  
+
+### **Ticket Note**
+Screen flickering caused by outdated display driver. Updated via Windows Update. Issue resolved.
+
+---
+
+# 📧 MICROSOFT 365 ISSUES
+
+## 📝 Scenario 3 — “Outlook keeps asking for my password”
+
+### **Troubleshooting Steps**
+1. Clear cached credentials:
+control keymgr.dll
+2. Sign out of Office apps  
+3. Restart device  
+4. Check sign‑in logs  
+5. Check Conditional Access  
+
+### **Resolution**
+- Corrupted token cache  
+- Clearing credentials + restart resolved issue  
+
+### **Ticket Note**
+Outlook repeatedly prompting for password due to corrupted token. Cleared Credential Manager and restarted device. User able to authenticate normally.
+
+---
+
+## 📝 Scenario 4 — “I can’t open files in OneDrive”
+
+### **Troubleshooting Steps**
+1. Check OneDrive status  
+2. Reset OneDrive:
+%localappdata%\Microsoft\OneDrive\onedrive.exe /reset
+3. Check file path length  
+4. Check storage quota  
+
+### **Resolution**
+- OneDrive client stuck syncing  
+- Reset client → files opened normally  
+
+### **Ticket Note**
+OneDrive failing to open files due to sync corruption. Reset client and confirmed successful sync. Issue resolved.
+
+---
+
+# 🌐 NETWORKING ISSUES
+
+## 📝 Scenario 5 — “Wi‑Fi keeps disconnecting”
+
+### **Troubleshooting Steps**
+1. Check signal strength  
+2. Switch to 5GHz  
+3. Restart router  
+4. Update Wi‑Fi drivers  
+5. Check for interference  
+
+### **Resolution**
+- User on weak 2.4GHz signal  
+- Switched to 5GHz → stable connection  
+
+### **Ticket Note**
+Wi‑Fi dropouts caused by weak 2.4GHz signal. Connected user to 5GHz SSID. Issue resolved.
+
+---
+
+## 📝 Scenario 6 — “VPN connects but I can’t access internal systems”
+
+### **Troubleshooting Steps**
+1. Check routing:
+route print
+2. Ping internal IP  
+3. Check DNS suffix  
+4. Restart VPN client  
+
+### **Resolution**
+- Missing DNS suffix after reconnect  
+- Restarted VPN → internal access restored  
+
+### **Ticket Note**
+VPN connected but internal resources unreachable due to missing DNS suffix. Restarted VPN client. Issue resolved.
+
+---
+
+# 🔐 IDENTITY & ACCESS ISSUES
+
+## 📝 Scenario 7 — “I’m not receiving MFA prompts”
+
+### **Troubleshooting Steps**
+1. Check MFA methods  
+2. Remove old phone  
+3. Force re‑registration  
+4. User sets up Authenticator again  
+
+### **Resolution**
+- User upgraded phone without re‑registering MFA  
+- Reset MFA → working  
+
+### **Ticket Note**
+MFA not prompting due to old device still registered. Reset MFA methods and guided user through setup. Issue resolved.
+
+---
+
+## 📝 Scenario 8 — “Access denied to SharePoint site”
+
+### **Troubleshooting Steps**
+1. Check group membership  
+2. Check site permissions  
+3. Confirm license  
+4. Add user to correct group  
+
+### **Resolution**
+- User missing SharePoint access group  
+- Added to group → access restored  
+
+### **Ticket Note**
+User unable to access SharePoint due to missing group membership. Added to correct group. Access confirmed.
+
+---
+
+# 🖨️ HARDWARE ISSUES
+
+## 📝 Scenario 9 — “Printer not working”
+
+### **Troubleshooting Steps**
+1. Ping printer  
+2. Restart spooler  
+3. Check printer IP  
+4. Update printer port  
+5. Test print  
+
+### **Resolution**
+- Printer IP changed  
+- Updated port → printing restored  
+
+### **Ticket Note**
+Printer unreachable due to DHCP IP change. Updated printer port. Test print successful.
+
+---
+
+## 📝 Scenario 10 — “My headset isn’t working in Teams”
+
+### **Troubleshooting Steps**
+1. Check Teams device settings  
+2. Check Windows sound settings  
+3. Update audio drivers  
+4. Test in Teams Web  
+
+### **Resolution**
+- Wrong audio device selected  
+- Corrected settings → working  
+
+### **Ticket Note**
+Teams audio failing due to incorrect device selection. Updated settings. Issue resolved.
+
+---
+
+# 🛡️ SECURITY ISSUES
+
+## 📝 Scenario 11 — “I received a suspicious email”
+
+### **Troubleshooting Steps**
+1. Ask user not to click links  
+2. Check sender domain  
+3. Check message headers  
+4. Report to security team  
+5. Block sender if required  
+
+### **Resolution**
+- Confirmed phishing attempt  
+- Reported + blocked  
+
+### **Ticket Note**
+User received phishing email. Verified malicious domain. Reported to security team and blocked sender. User advised on phishing awareness.
+
+---
+
+## 📝 Scenario 12 — “My account was locked out”
+
+### **Troubleshooting Steps**
+1. Check sign‑in logs  
+2. Look for repeated failures  
+3. Reset password  
+4. Force sign‑out  
+5. Check for risky sign‑ins  
+
+### **Resolution**
+- Password sprayed from external IP  
+- Reset password + sign‑out  
+
+### **Ticket Note**
+Account locked due to repeated failed sign‑ins from external IP. Reset password, forced sign‑out, and advised user to enable additional MFA methods.
+
+---
+
+# 📚 Related Pages
+
+- Windows Troubleshooting  
+- M365 Support  
+- Networking Basics  
+- Identity & Access  
+- Hardware Support  
+- Security Incidents  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the core Ticketing Scenarios section.
