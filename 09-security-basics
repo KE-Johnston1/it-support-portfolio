@@ -1,1 +1,271 @@
+# Security Basics
+
+A technical introduction to modern cybersecurity concepts relevant to IT Support, Microsoft 365, identity security, endpoint protection, and incident response.  
+This section focuses on practical, real‑world security fundamentals used in enterprise environments.
+
+---
+
+# 🔐 1. The CIA Triad (Core Security Model)
+
+### **Confidentiality**
+Protecting data from unauthorised access.  
+Examples:
+- MFA  
+- Encryption  
+- Access controls  
+- Conditional Access  
+
+### **Integrity**
+Ensuring data is accurate and unaltered.  
+Examples:
+- Hashing  
+- Version control  
+- Audit logs  
+
+### **Availability**
+Ensuring systems are accessible when needed.  
+Examples:
+- Backups  
+- Redundancy  
+- DDoS protection  
+
+The CIA triad underpins all security decisions.
+
+---
+
+# 🛡️ 2. Zero Trust Security Model
+
+Zero Trust = **“Never trust, always verify.”**
+
+Key principles:
+- Verify every identity  
+- Validate every device  
+- Enforce least privilege  
+- Assume breach  
+- Monitor continuously  
+
+Zero Trust is the foundation of modern Microsoft 365 and Entra ID security.
+
+---
+
+# 🧩 3. Identity Security (The New Perimeter)
+
+Identity is the primary attack surface in cloud environments.
+
+### **Key Controls**
+- MFA for all users  
+- Conditional Access  
+- Passwordless authentication  
+- Privileged Access Management  
+- Role‑based access control (RBAC)  
+
+### **Common Identity Threats**
+- Password spraying  
+- MFA fatigue attacks  
+- Phishing  
+- Token theft  
+- Compromised OAuth apps  
+
+### **Why It Matters**
+Most breaches begin with compromised credentials.
+
+---
+
+# 🖥️ 4. Endpoint Security (EDR & Hardening)
+
+Endpoints are the first line of defence.
+
+### **EDR (Endpoint Detection & Response)**
+Examples:
+- Microsoft Defender for Endpoint  
+- CrowdStrike  
+- SentinelOne  
+
+EDR provides:
+- Behavioural detection  
+- Threat hunting  
+- Automated remediation  
+- Attack chain visibility  
+
+### **Device Hardening**
+- Enforce BitLocker  
+- Block unsigned apps  
+- Apply security baselines  
+- Disable legacy protocols  
+- Keep OS patched  
+
+### **Common Endpoint Threats**
+- Malware  
+- Ransomware  
+- Keyloggers  
+- Persistence mechanisms  
+
+---
+
+# 🌐 5. Network Security Basics
+
+### **Key Concepts**
+- Firewalls  
+- VPN  
+- DNS filtering  
+- Network segmentation  
+- TLS/SSL encryption  
+
+### **Common Network Attacks**
+- Man‑in‑the‑Middle (MITM)  
+- DNS poisoning  
+- ARP spoofing  
+- DDoS attacks  
+
+### **User Impact**
+- Slow connections  
+- Certificate warnings  
+- VPN failures  
+- Blocked websites  
+
+---
+
+# 📧 6. Email Security (High‑Risk Area)
+
+Email is the #1 attack vector.
+
+### **Threat Types**
+- Phishing  
+- Spear phishing  
+- Business Email Compromise (BEC)  
+- Malicious attachments  
+- Spoofing  
+
+### **Controls**
+- Anti‑phishing policies  
+- Safe Links / Safe Attachments  
+- DMARC, DKIM, SPF  
+- User reporting  
+- Quarantine policies  
+
+---
+
+# 🧨 7. Common Attack Types (Technical Overview)
+
+### **1. Phishing**
+Tricking users into revealing credentials.
+
+### **2. Malware**
+Malicious software designed to harm systems.
+
+Types:
+- Ransomware  
+- Trojans  
+- Worms  
+- Spyware  
+
+### **3. Brute Force / Password Spraying**
+Attackers try common passwords across many accounts.
+
+### **4. Social Engineering**
+Manipulating users into taking unsafe actions.
+
+### **5. Lateral Movement**
+Attacker moves through the network after initial compromise.
+
+### **6. Privilege Escalation**
+Gaining higher permissions than intended.
+
+---
+
+# 🧪 8. Incident Response (Technical Workflow)
+
+1. **Identify**  
+   - Alerts  
+   - Logs  
+   - User reports  
+
+2. **Contain**  
+   - Disable accounts  
+   - Isolate devices  
+   - Block IPs  
+
+3. **Eradicate**  
+   - Remove malware  
+   - Patch vulnerabilities  
+   - Reset credentials  
+
+4. **Recover**  
+   - Restore services  
+   - Re-enable accounts  
+   - Monitor activity  
+
+5. **Review**  
+   - Root cause  
+   - Lessons learned  
+   - Prevent recurrence  
+
+---
+
+# 🔍 9. Security Logs & Monitoring
+
+### **Key Log Sources**
+- Entra ID sign‑in logs  
+- Audit logs  
+- Defender alerts  
+- Exchange message trace  
+- Intune device logs  
+- Event Viewer (Windows)  
+- Console (macOS)  
+
+### **What to Look For**
+- Impossible travel  
+- MFA failures  
+- Repeated password attempts  
+- Unusual device registrations  
+- Suspicious OAuth app consent  
+
+---
+
+# 🧠 10. Security Scenarios (Technical Examples)
+
+## 📝 Scenario 1 — Impossible Travel Alert
+**Cause:** Credentials used from two distant locations within minutes.  
+**Response:**  
+- Reset password  
+- Revoke sessions  
+- Check sign‑in logs  
+- Escalate if repeated  
+
+---
+
+## 📝 Scenario 2 — Malware Detected on Endpoint
+**Cause:** User downloaded malicious file.  
+**Response:**  
+- Isolate device  
+- Run full Defender scan  
+- Remove malware  
+- Check for persistence  
+- Reconnect device after clearance  
+
+---
+
+## 📝 Scenario 3 — Suspicious OAuth App Consent
+**Cause:** User granted permissions to malicious app.  
+**Response:**  
+- Revoke app consent  
+- Reset password  
+- Review audit logs  
+- Block app tenant‑wide  
+
+---
+
+# 📚 Related Pages
+
+- Security Awareness  
+- Identity Basics  
+- Entra Troubleshooting  
+- Demos & Scenarios  
+- Ticketing Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Security section.
 
