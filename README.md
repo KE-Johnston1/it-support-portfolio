@@ -66,7 +66,7 @@ This portfolio demonstrates:
 - A solid foundation for cybersecurity and SOC roles  
 
 It consolidates hands‑on labs, real troubleshooting experience, and structured learning into one professional, employer‑ready resource.  
-(Original purpose statement referenced from your current README )
+
 
 ---
 
@@ -81,8 +81,6 @@ This portfolio is supported by additional specialised projects, including:
 - Security Awareness Tools  
 - SOC & Cybersecurity Labs  
 
-(Referenced from your existing README’s supporting repos section )
-
 ---
 
 # 📈 Roadmap
@@ -96,8 +94,6 @@ Planned additions:
 - Diagrams & architecture maps  
 - Evidence logs & screenshots  
 - Additional labs and projects  
-
-(Your README already includes a “Next Steps” section — this is the polished version )
 
 ---
 
