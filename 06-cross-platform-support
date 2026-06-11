@@ -1,1 +1,267 @@
+# Cross‑Platform Support
+
+A practical guide to supporting users across Windows, macOS, iOS/Android, browsers, and Linux.  
+This document reflects real IT Support workflows in mixed‑device environments.
+
+---
+
+# 🖥️ 1. Windows Support (Core Platform)
+
+Windows is the most common platform in enterprise environments.
+
+### **Common Tasks**
+- Password resets  
+- BitLocker recovery  
+- Printer setup  
+- Outlook/Teams troubleshooting  
+- VPN configuration  
+- Windows Updates  
+- OneDrive sync issues  
+
+### **Key Tools**
+- Task Manager  
+- Event Viewer  
+- Device Manager  
+- Windows Update  
+- Credential Manager  
+- Command Prompt / PowerShell  
+
+### **Useful Commands**
+ipconfig /all
+sfc /scannow
+chkdsk /scan
+winget upgrade --all
+
+---
+
+# 🍎 2. macOS Support
+
+macOS is increasingly common in hybrid and creative teams.
+
+### **Common Tasks**
+- Wi‑Fi troubleshooting  
+- Keychain issues  
+- Office for Mac sign‑in problems  
+- OneDrive sync  
+- VPN configuration  
+- Profile installation (MDM)  
+
+### **Key Tools**
+- Activity Monitor  
+- Console (logs)  
+- System Settings  
+- Keychain Access  
+- Terminal  
+
+### **Useful Commands**
+sudo killall cfprefsd
+sudo dscacheutil -flushcache
+sudo ifconfig en0 down && sudo ifconfig en0 up
+
+### **Typical Issues**
+- Keychain mismatches after password change  
+- Office apps stuck on “Sign in”  
+- OneDrive not launching (reset required)  
+
+---
+
+# 📱 3. iOS & Android Support
+
+Mobile devices are essential for MFA, email, and Teams.
+
+### **Common Tasks**
+- MFA setup  
+- Email profile configuration  
+- Company Portal / Intune enrolment  
+- App permissions  
+- VPN mobile profiles  
+
+### **iOS Troubleshooting**
+- Reset network settings  
+- Offload/reinstall apps  
+- Check Screen Time restrictions  
+- Check iCloud Keychain conflicts  
+
+### **Android Troubleshooting**
+- Clear app cache  
+- Reset Google Play Services  
+- Check battery optimisation (can block notifications)  
+- Re‑register device in Company Portal  
+
+---
+
+# 🌐 4. Browser Support (All Platforms)
+
+Browsers are a major source of authentication and app issues.
+
+### **Supported Browsers**
+- Edge  
+- Chrome  
+- Safari  
+- Firefox  
+
+### **Common Issues**
+- Sign‑in loops  
+- MFA not prompting  
+- Cookies disabled  
+- Extensions blocking login  
+- Cached credentials  
+
+### **Fixes**
+- Clear cache/cookies  
+- Disable extensions  
+- Use InPrivate/Incognito  
+- Reset browser profile  
+
+---
+
+# 🐧 5. Linux Basics (Light Support)
+
+Some developers or engineers may use Linux.
+
+### **Common Tasks**
+- SSH access  
+- VPN configuration  
+- Package updates  
+- Browser troubleshooting  
+- File permissions  
+
+### **Useful Commands**
+sudo apt update && sudo apt upgrade
+df -h
+top
+sudo systemctl status <service>
+
+### **Typical Issues**
+- Missing packages  
+- Permission denied  
+- VPN not routing traffic  
+- Browser certificate errors  
+
+---
+
+# 🔧 6. Cross‑Platform Troubleshooting Framework
+
+A universal workflow that works on **any** device:
+
+### **1. Identify the platform**
+Windows? macOS? iOS? Android? Browser? Linux?
+
+### **2. Confirm the symptoms**
+- App not loading  
+- Sign‑in failure  
+- Network issue  
+- Performance issue  
+- Sync issue  
+
+### **3. Reproduce the issue**
+If possible, replicate the steps.
+
+### **4. Check basics**
+- Network connection  
+- Updates installed  
+- Storage available  
+- Correct account used  
+- Permissions assigned  
+
+### **5. Clear cached data**
+- Browser cache  
+- App cache  
+- Credential stores  
+- Keychain / Keychain Access  
+
+### **6. Reset the app**
+- OneDrive reset  
+- Teams reset  
+- Outlook profile rebuild  
+- Mobile app reinstall  
+
+### **7. Check logs**
+- Event Viewer (Windows)  
+- Console (macOS)  
+- Browser dev tools  
+- Intune/MDM logs  
+
+### **8. Escalate if needed**
+- Device compliance issues  
+- Certificate failures  
+- Kernel‑level errors  
+- MDM enrolment failures  
+
+---
+
+# 🧪 7. Cross‑Platform Scenarios (Real Tickets + Model Responses)
+
+## 📝 Scenario 1 — “Teams won’t open on macOS”
+
+### **Cause**
+Corrupted Teams cache.
+
+### **Fix**
+1. Quit Teams  
+2. Delete:
+~/Library/Application Support/Microsoft/Teams
+3. Relaunch Teams  
+
+### **Ticket Note**
+Teams failing to launch due to corrupted cache. Cleared Teams support folder. App launched successfully.
+
+---
+
+## 📝 Scenario 2 — “Outlook mobile not syncing emails”
+
+### **Cause**
+Battery optimisation blocking background activity.
+
+### **Fix**
+- Disable battery optimisation for Outlook  
+- Clear app cache  
+- Re‑add account  
+
+### **Ticket Note**
+Outlook mobile not syncing due to battery optimisation. Disabled optimisation and re‑added account. Sync restored.
+
+---
+
+## 📝 Scenario 3 — “Chrome keeps signing me out of Microsoft apps”
+
+### **Cause**
+Third‑party cookie blocking.
+
+### **Fix**
+Enable:
+chrome://settings/cookies
+→ Allow third‑party cookies
+
+### **Ticket Note**
+Chrome blocking third‑party cookies causing Microsoft sign‑out loop. Enabled cookies. Issue resolved.
+
+---
+
+## 📝 Scenario 4 — “Linux user cannot connect to VPN”
+
+### **Cause**
+Missing certificate package.
+
+### **Fix**
+sudo apt install network-manager-openvpn-gnome
+
+### **Ticket Note**
+VPN failing due to missing OpenVPN package. Installed required package. Connection successful.
+
+---
+
+# 📚 Related Pages
+
+- Windows Troubleshooting  
+- macOS Support  
+- Identity & Access  
+- Ticketing Scenarios  
+- Networking Basics  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Cross‑Platform Support section.
 
