@@ -1,1 +1,234 @@
+# Security Scenarios
+
+A collection of realistic security incidents and model responses demonstrating investigation, containment, remediation, and escalation workflows used in modern IT and security operations.
+
+---
+
+# 🧨 Scenario 1 — Phishing Email Clicked
+
+## 🎯 User Report
+> “I clicked a link in an email and entered my password. I think it was fake.”
+
+## 🔍 Investigation
+- Check Entra ID sign‑in logs  
+- Look for impossible travel  
+- Look for unfamiliar IPs  
+- Check MFA prompts  
+- Review audit logs for mailbox rules  
+
+## 🛑 Containment
+1. Reset password  
+2. Revoke all sessions  
+3. Block malicious domain  
+4. Run Defender scan on device  
+
+## 🔧 Remediation
+- Remove any malicious inbox rules  
+- Confirm no OAuth apps were granted access  
+- Educate user on phishing indicators  
+
+## 📝 Ticket Note (Model Answer)
+User entered credentials into phishing site. Reset password, revoked sessions, and checked sign‑in logs — no suspicious activity detected. Removed malicious inbox rule and blocked sender domain. Educated user on phishing awareness. Issue contained and resolved.
+
+---
+
+# 🔐 Scenario 2 — MFA Fatigue Attack
+
+## 🎯 User Report
+> “I keep getting MFA prompts I didn’t request.”
+
+## 🔍 Investigation
+- Check sign‑in logs for repeated failures  
+- Look for password spray attempts  
+- Check risky sign‑ins  
+
+## 🛑 Containment
+1. Advise user to deny all prompts  
+2. Reset password  
+3. Revoke sessions  
+4. Check for compromised OAuth apps  
+
+## 🔧 Remediation
+- Enforce number matching  
+- Review Conditional Access  
+- Add additional MFA methods  
+
+## 📝 Ticket Note
+User targeted by MFA fatigue attack. Reset password, revoked sessions, and enabled number matching. No suspicious sign‑ins detected after reset. User advised to report future unexpected prompts immediately.
+
+---
+
+# 🛡️ Scenario 3 — Suspicious Inbox Rules (BEC Attempt)
+
+## 🎯 User Report
+> “Emails are disappearing from my inbox.”
+
+## 🔍 Investigation
+- Check mailbox rules  
+- Look for “forward to external address”  
+- Check audit logs  
+- Review sign‑in logs  
+
+## 🛑 Containment
+1. Remove malicious rules  
+2. Reset password  
+3. Revoke sessions  
+4. Block external forwarding  
+
+## 🔧 Remediation
+- Enable mailbox auditing  
+- Review anti‑phishing policies  
+- Notify security team  
+
+## 📝 Ticket Note
+Detected malicious inbox rule forwarding emails externally. Removed rule, reset password, revoked sessions, and blocked external forwarding. No further suspicious activity observed. Escalated to security team for review.
+
+---
+
+# 🖥️ Scenario 4 — Malware Detected by Defender
+
+## 🎯 Alert
+> “Microsoft Defender detected: Trojan:Win32/Agent.”
+
+## 🔍 Investigation
+- Review Defender alert details  
+- Check device timeline  
+- Identify source file  
+- Check for persistence  
+
+## 🛑 Containment
+1. Isolate device in Defender  
+2. Block file hash  
+3. Block source domain  
+
+## 🔧 Remediation
+- Run full scan  
+- Remove malware  
+- Patch OS and apps  
+- Review user permissions  
+
+## 📝 Ticket Note
+Defender detected Trojan:Win32/Agent. Device isolated, malware removed, and full scan completed. No persistence mechanisms found. User educated on safe downloading practices.
+
+---
+
+# 🌍 Scenario 5 — Impossible Travel Alert
+
+## 🎯 Alert
+> “Sign‑ins from UK and Brazil within 2 minutes.”
+
+## 🔍 Investigation
+- Check IP reputation  
+- Check MFA prompts  
+- Review audit logs  
+- Confirm user location  
+
+## 🛑 Containment
+1. Reset password  
+2. Revoke sessions  
+3. Block suspicious IP  
+
+## 🔧 Remediation
+- Enforce MFA if not enabled  
+- Review Conditional Access  
+- Monitor for further attempts  
+
+## 📝 Ticket Note
+Impossible travel alert triggered. User confirmed they were not in Brazil. Reset password, revoked sessions, and blocked IP. No further suspicious activity detected.
+
+---
+
+# 🧩 Scenario 6 — OAuth App Abuse
+
+## 🎯 Alert
+> “User granted high‑risk permissions to unknown app.”
+
+## 🔍 Investigation
+- Check app name and publisher  
+- Review permissions granted  
+- Check audit logs  
+- Check sign‑in logs  
+
+## 🛑 Containment
+1. Revoke app consent  
+2. Reset password  
+3. Revoke sessions  
+
+## 🔧 Remediation
+- Block app tenant‑wide  
+- Enable admin consent workflow  
+- Educate user  
+
+## 📝 Ticket Note
+User granted OAuth consent to malicious app. Revoked consent, reset password, and blocked app. No data exfiltration detected. Admin consent workflow enabled to prevent recurrence.
+
+---
+
+# 🧪 Scenario 7 — Device Non‑Compliant (Security Risk)
+
+## 🎯 User Report
+> “I can’t access Teams — it says my device is not compliant.”
+
+## 🔍 Investigation
+- Check Intune compliance  
+- Check OS version  
+- Check encryption status  
+- Check antivirus status  
+
+## 🛑 Containment
+- Block access until compliant  
+- Enforce Conditional Access  
+
+## 🔧 Remediation
+- Update OS  
+- Enable BitLocker  
+- Update Defender  
+- Re‑sync device  
+
+## 📝 Ticket Note
+Device non‑compliant due to missing OS updates and disabled BitLocker. Guided user through updates and encryption. Device became compliant and access restored.
+
+---
+
+# 🔥 Scenario 8 — Ransomware Behaviour Detected
+
+## 🎯 Alert
+> “Mass file encryption behaviour detected.”
+
+## 🔍 Investigation
+- Check Defender alert chain  
+- Identify patient zero  
+- Review file activity  
+- Check lateral movement  
+
+## 🛑 Containment
+1. Immediately isolate device  
+2. Disable user account  
+3. Block malicious process  
+4. Notify security team  
+
+## 🔧 Remediation
+- Restore files from backup  
+- Patch vulnerabilities  
+- Review admin permissions  
+- Conduct post‑incident review  
+
+## 📝 Ticket Note
+Ransomware behaviour detected. Device isolated and account disabled. No lateral movement observed. Files restored from backup. Escalated to security team for full incident review.
+
+---
+
+# 📚 Related Pages
+
+- Security Basics  
+- Security Awareness  
+- Identity Basics  
+- Entra Troubleshooting  
+- Demos & Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Security section.
 
