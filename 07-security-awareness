@@ -1,1 +1,210 @@
+# Security Awareness
 
+A practical guide to helping users stay safe online.  
+This document focuses on human‑centric security — the biggest risk area in modern organisations.
+
+---
+
+# 🧠 1. Why Security Awareness Matters
+
+Most security incidents start with **human error**, not technical failure.
+
+Common causes:
+- Clicking phishing emails  
+- Weak or reused passwords  
+- Approving fraudulent MFA prompts  
+- Sharing sensitive data  
+- Using personal devices insecurely  
+
+Security awareness reduces risk more than any tool.
+
+---
+
+# 📧 2. Phishing Awareness
+
+Phishing is the most common attack method.
+
+### **Red Flags**
+- Unexpected attachments  
+- Urgent or threatening language  
+- “Verify your account” messages  
+- Misspelled domains  
+- Requests for passwords or MFA codes  
+- Emails from executives asking for gift cards  
+
+### **What Users Should Do**
+- Do NOT click suspicious links  
+- Do NOT open unexpected attachments  
+- Report the email using the “Report Phishing” button  
+- Ask IT if unsure  
+
+### **What IT Should Do**
+- Check headers  
+- Block sender/domain  
+- Report to security team  
+- Educate user  
+
+---
+
+# 🔐 3. Password & MFA Best Practices
+
+### **Passwords**
+- Use long passphrases  
+- Never reuse passwords  
+- Never share passwords  
+- Avoid personal info (pets, birthdays, names)  
+
+### **MFA**
+- Always enable MFA  
+- Never approve unexpected MFA prompts  
+- Report MFA fatigue attacks immediately  
+
+### **Password Managers**
+Encourage users to store passwords securely instead of reusing them.
+
+---
+
+# 🌐 4. Safe Browsing Practices
+
+### **Users Should Avoid**
+- Downloading unknown software  
+- Entering credentials on unfamiliar sites  
+- Using public Wi‑Fi without VPN  
+- Accepting browser notifications from unknown sites  
+
+### **Users Should Do**
+- Keep browsers updated  
+- Use trusted extensions only  
+- Check for HTTPS  
+- Use private browsing on shared devices  
+
+---
+
+# 🖥️ 5. Device Security
+
+### **Company Devices**
+- Keep OS updated  
+- Lock screen when away  
+- Do not install unauthorised apps  
+- Report lost/stolen devices immediately  
+
+### **Personal Devices (BYOD)**
+- Must use screen lock  
+- Must use updated OS  
+- Must not store company data unencrypted  
+- Must enrol in MDM if required  
+
+---
+
+# 📁 6. Data Handling & Sharing
+
+### **Do Not**
+- Email sensitive data externally  
+- Upload company files to personal cloud  
+- Share documents with “Anyone with the link”  
+- Store data on USB drives without encryption  
+
+### **Do**
+- Use SharePoint/OneDrive  
+- Use secure sharing links  
+- Label data correctly (if using sensitivity labels)  
+- Follow retention policies  
+
+---
+
+# 🎭 7. Social Engineering Awareness
+
+Attackers often impersonate:
+
+- IT Support  
+- HR  
+- Finance  
+- Executives  
+- Vendors  
+
+### **Red Flags**
+- Requests for MFA codes  
+- Requests to install remote tools  
+- “Urgent” financial requests  
+- Calls asking to verify login details  
+
+### **User Response**
+- Verify identity via official channels  
+- Report suspicious calls/emails  
+- Never share MFA codes  
+
+---
+
+# 🛑 8. Reporting Security Incidents
+
+Users should report immediately if they:
+
+- Click a suspicious link  
+- Enter credentials into a fake site  
+- Approve an unexpected MFA prompt  
+- Lose a device  
+- Notice unusual account activity  
+- Receive a suspicious call  
+
+### **IT Response**
+1. Contain  
+2. Reset passwords  
+3. Revoke sessions  
+4. Check sign‑in logs  
+5. Escalate to security team  
+
+---
+
+# 🧪 9. Security Awareness Scenarios (Realistic Examples)
+
+## 📝 Scenario 1 — “I clicked a link in a suspicious email”
+
+### **User Action**
+Reports incident immediately.
+
+### **IT Response**
+- Reset password  
+- Revoke sessions  
+- Check sign‑in logs  
+- Block sender  
+- Educate user  
+
+---
+
+## 📝 Scenario 2 — “I got an MFA prompt I didn’t request”
+
+### **Cause**
+Attacker trying password spraying.
+
+### **IT Response**
+- Advise user to deny prompt  
+- Reset password  
+- Check risky sign‑ins  
+- Escalate if repeated  
+
+---
+
+## 📝 Scenario 3 — “Someone called pretending to be IT”
+
+### **Cause**
+Social engineering attempt.
+
+### **IT Response**
+- Advise user to never share codes/passwords  
+- Document details  
+- Notify security team  
+
+---
+
+# 📚 Related Pages
+
+- Security Basics (coming next)  
+- Identity Basics  
+- Ticketing Scenarios  
+- Cross‑Platform Support  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Security Awareness section.
