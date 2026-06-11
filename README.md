@@ -1,113 +1,117 @@
-# IT Support Portfolio
-
-A structured IT Support portfolio showcasing Windows 10/11 troubleshooting, Microsoft 365 support, networking fundamentals, identity & MFA workflows, ITIL‑aligned ticketing examples, and CompTIA‑ready teaching materials.  
-This portfolio demonstrates real-world, job-ready skills for 1st Line Support, Service Desk Technician, IT Technician, and CompTIA Instructor roles.
-
----
-
-## 📌 Contents
-
-### 1. Windows Support  
-- Windows 10/11 troubleshooting  
-- Common issues (printers, updates, network drops, slow performance)  
-- PowerShell scripts for diagnostics  
-- Evidence logs & screenshots  
-
-### 2. Microsoft 365 Support  
-- Outlook issues  
-- OneDrive sync failures  
-- Teams troubleshooting  
-- MFA lockouts  
-- Admin Centre tasks  
-
-### 3. Networking Basics  
-- DHCP, DNS, NAT  
-- Wi-Fi troubleshooting  
-- Network diagnostics  
-- Home & small office diagrams  
-
-### 4. Identity & Access  
-- Azure AD basics  
-- Account lockouts  
-- Password reset workflows  
-- Conditional Access  
-- IAM troubleshooting scenarios  
-
-### 5. ITIL Ticketing System  
-- Realistic sample tickets  
-- SLA prioritisation  
-- Escalation paths  
-- User communication templates  
-- Root cause analysis examples  
-
-### 6. Cross‑Platform Support  
-- Linux basics  
-- macOS troubleshooting  
-- Google Workspace  
-- Jamf  
-- AWS & Azure fundamentals  
-
-### 7. Security Awareness  
-- Phishing identification  
-- Password policy guidance  
-- Device hardening  
-- User education materials  
-
-### 8. Troubleshooting Scenarios & Demos  
-- Realistic support scenarios  
-- Roleplay user calls  
-- CompTIA‑style PBQs  
-- Interview demo scripts  
+# IT Support Portfolio  
+A structured, professional portfolio demonstrating real-world IT Support, Microsoft 365, networking, identity, troubleshooting, and security fundamentals.  
+Designed to showcase job‑ready skills for **1st Line Support, Service Desk Technician, IT Technician, and Security Support** roles.
 
 ---
 
-## 🎯 Purpose of This Portfolio
+# 📌 Overview
 
-This repository is designed to demonstrate:
+This portfolio brings together hands‑on troubleshooting, structured documentation, ITIL‑aligned workflows, and security‑focused practices.  
+It reflects the way real IT teams work — clear, methodical, evidence‑driven, and user‑focused.
 
-- Practical IT Support troubleshooting  
+Each section includes:
+- Practical troubleshooting steps  
+- Realistic scenarios  
+- Model ticket notes  
+- Tools and commands  
+- Cross‑platform workflows  
+- Security considerations  
+
+---
+
+# 📁 Portfolio Contents
+
+### **01 — Windows Support**
+Troubleshooting Windows 10/11 issues including performance, updates, networking, printers, profiles, and PowerShell diagnostics.
+
+### **02 — Microsoft 365 Support**
+Outlook, Teams, OneDrive, MFA, licensing, Admin Centre tasks, and common user issues.
+
+### **03 — Networking Basics**
+DNS, DHCP, NAT, routing, Wi‑Fi troubleshooting, VPN issues, and network diagnostics.
+
+### **04 — Identity & Access**
+Entra ID (Azure AD), MFA, Conditional Access, account lockouts, password resets, and IAM troubleshooting.
+
+### **05 — Ticketing Scenarios**
+ITIL‑aligned sample tickets with clear documentation, communication, root cause analysis, and escalation paths.
+
+### **06 — Cross‑Platform Support**
+Windows, macOS, Linux basics, iOS/Android, browser troubleshooting, and cross‑platform workflows.
+
+### **07 — Security Awareness**
+User‑focused security guidance: phishing, passwords, MFA, safe browsing, device safety, and reporting procedures.
+
+### **08 — Demos & Scenarios**
+Practical troubleshooting demos, walkthroughs, and real-world examples across Windows, M365, networking, identity, and security.
+
+### **09 — Security Basics**
+Technical security fundamentals: CIA triad, Zero Trust, identity security, EDR, network security, email security, and incident response.
+
+### **10 — Security Scenarios**
+Realistic security incidents: phishing, MFA fatigue, OAuth abuse, malware, impossible travel, ransomware behaviour, and device compliance.
+
+---
+
+# 🎯 Purpose of This Portfolio
+
+This portfolio demonstrates:
+
+- Strong troubleshooting and diagnostic skills  
 - Clear, structured documentation  
+- ITIL‑aligned ticket handling  
 - Evidence‑driven problem solving  
-- ITIL‑aligned workflows  
-- Strong communication skills  
-- Ability to teach and explain technical concepts  
-- A foundation for cybersecurity and SOC roles  
+- Ability to explain technical concepts  
+- Cross‑platform support capability  
+- A solid foundation for cybersecurity and SOC roles  
 
-It consolidates real troubleshooting experience, hands‑on labs, and structured learning into one professional, employer‑ready portfolio.
-
----
-
-## 🔗 Supporting Repositories
-
-This portfolio is supported by additional specialised projects:
-
-- **Windows 11 Secure Setup & Troubleshooting Guide**  
-- **M365 Support & Troubleshooting**  
-- **Cross‑Platform Troubleshooting Toolkit**  
-- **Auth0 IAM Admin Lab**  
-- **Security Awareness Tools**  
-- **SOC & Cybersecurity Labs**
-
-These repos provide deeper technical detail and extended examples.
+It consolidates hands‑on labs, real troubleshooting experience, and structured learning into one professional, employer‑ready resource.  
+(Original purpose statement referenced from your current README )
 
 ---
 
-## 📈 Next Steps
+# 🔗 Supporting Repositories
 
-- Add sample tickets  
-- Add troubleshooting scenarios  
-- Add diagrams  
-- Add PowerShell scripts  
-- Add evidence logs  
-- Add screenshots  
-- Expand cross‑platform support  
+This portfolio is supported by additional specialised projects, including:
 
-This portfolio will grow continuously as new skills and labs are added.
+- Windows 11 Secure Setup & Troubleshooting  
+- M365 Support & Troubleshooting  
+- Cross‑Platform Troubleshooting Toolkit  
+- IAM / Auth0 Admin Lab  
+- Security Awareness Tools  
+- SOC & Cybersecurity Labs  
+
+(Referenced from your existing README’s supporting repos section )
 
 ---
 
-## 👤 Author
+# 📈 Roadmap
+
+Planned additions:
+
+- Intune & Device Management  
+- Autopilot  
+- SOC Fundamentals  
+- PowerShell automation  
+- Diagrams & architecture maps  
+- Evidence logs & screenshots  
+- Additional labs and projects  
+
+(Your README already includes a “Next Steps” section — this is the polished version )
+
+---
+
+# 👤 Author
 
 **K. Johnston**  
 IT Support Technician | CompTIA Certified | Cybersecurity Analyst (in progress)  
 Margate, Kent, UK  
+
+
+
+---
+
+# ✔️ Status
+
+This portfolio is actively maintained and continuously expanding as new skills, labs, and scenarios are added.
+
