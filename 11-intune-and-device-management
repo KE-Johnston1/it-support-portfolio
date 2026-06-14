@@ -1,1 +1,265 @@
+# Intune & Device Management
+
+A practical guide to Microsoft Intune, device compliance, configuration profiles, app deployment, Autopilot, and troubleshooting.  
+This section reflects real-world workflows used in modern IT Support and Device Management teams.
+
+---
+
+# 📌 1. What Is Intune?
+
+Microsoft Intune is a cloud-based endpoint management platform used to manage:
+
+- Windows devices  
+- macOS devices  
+- iOS/Android devices  
+- Apps  
+- Security policies  
+- Compliance  
+- Updates  
+- Autopilot provisioning  
+
+Intune is part of the Microsoft Endpoint Manager ecosystem.
+
+---
+
+# 🖥️ 2. Device Enrolment
+
+### **Windows Enrolment**
+- Azure AD Join  
+- Hybrid Join  
+- Autopilot  
+- Company Portal  
+
+### **macOS Enrolment**
+- Company Portal  
+- Automated Device Enrolment (via Apple Business Manager)  
+
+### **iOS/Android Enrolment**
+- Company Portal  
+- Apple Automated Device Enrolment  
+- Android Enterprise (Work Profile / Fully Managed)  
+
+### **Common Enrolment Issues**
+- MDM authority not set  
+- Device already enrolled  
+- Incorrect user permissions  
+- Time/date mismatch  
+- Company Portal stuck on “Setting up device”  
+
+---
+
+# 🔐 3. Device Compliance
+
+Compliance determines whether a device is allowed to access company resources.
+
+### **Common Compliance Policies**
+- Require BitLocker  
+- Require secure boot  
+- Require antivirus  
+- Require OS version  
+- Require password/PIN  
+- Block jailbroken/rooted devices  
+
+### **Troubleshooting Compliance**
+1. Check Intune → Devices → Device compliance  
+2. Sync device  
+3. Check OS version  
+4. Check encryption status  
+5. Check antivirus status  
+6. Review Conditional Access policies  
+
+### **Typical User Error**
+> “I can’t access Teams — it says my device is not compliant.”
+
+Usually caused by:
+- Missing updates  
+- BitLocker disabled  
+- Antivirus out of date  
+- Device not synced  
+
+---
+
+# ⚙️ 4. Configuration Profiles
+
+Configuration profiles push settings to devices.
+
+### **Common Profile Types**
+- Device restrictions  
+- Endpoint protection  
+- Wi‑Fi profiles  
+- VPN profiles  
+- Email profiles  
+- Custom OMA-URI settings  
+- macOS configuration profiles (.mobileconfig)  
+
+### **Troubleshooting Profiles**
+- Check profile assignment  
+- Check scope tags  
+- Check conflicts  
+- Review device logs  
+- Re-sync device  
+
+### **Common Issues**
+- Profile stuck in “Pending”  
+- Conflicting settings  
+- Unsupported OS version  
+
+---
+
+# 📦 5. App Deployment
+
+Intune can deploy:
+
+- Win32 apps  
+- Microsoft Store apps  
+- iOS/Android apps  
+- macOS apps  
+- Web links  
+
+### **Win32 App Packaging**
+Uses `.intunewin` format.
+
+### **Deployment Steps**
+1. Add app  
+2. Upload package  
+3. Configure install/uninstall commands  
+4. Assign to users or devices  
+5. Monitor installation  
+
+### **Troubleshooting App Deployment**
+- Check install command  
+- Check detection rules  
+- Check device compatibility  
+- Check assignment  
+- Review Intune logs  
+
+---
+
+# 🚀 6. Windows Autopilot
+
+Autopilot provisions new Windows devices with:
+
+- Azure AD Join  
+- Intune enrolment  
+- Preconfigured apps  
+- Policies  
+- Settings  
+
+### **Autopilot Workflow**
+1. Import hardware hash  
+2. Assign Autopilot profile  
+3. User signs in  
+4. Device configures automatically  
+
+### **Common Autopilot Issues**
+- Device not assigned to profile  
+- Incorrect hardware hash  
+- Network restrictions  
+- TPM issues  
+
+---
+
+# 🛠️ 7. Troubleshooting Intune (General)
+
+### **1. Sync the device**
+- Windows: Settings → Accounts → Access work or school → Info → Sync  
+- Mobile: Company Portal → Menu → Devices → Sync  
+
+### **2. Check Intune logs**
+- Windows:  
+C:\ProgramData\Microsoft\IntuneManagementExtension\Logs
+
+- macOS:  
+Console → “mdmclient”  
+
+### **3. Check Event Viewer**
+- Applications and Services Logs → Microsoft → Windows → DeviceManagement-Enterprise-Diagnostics-Provider  
+
+### **4. Check Company Portal**
+- Sign-in issues  
+- Compliance issues  
+- App installation errors  
+
+### **5. Check assignments**
+- User/device group membership  
+- Scope tags  
+- Licensing  
+
+---
+
+# 🧪 8. Real-World Intune Scenarios
+
+## 📝 Scenario 1 — Device Not Compliant
+
+### **Cause**
+BitLocker disabled.
+
+### **Fix**
+1. Enable BitLocker  
+2. Sync device  
+3. Confirm compliance in Intune  
+
+### **Ticket Note**
+Device non-compliant due to BitLocker disabled. Enabled encryption and synced device. Compliance restored.
+
+---
+
+## 📝 Scenario 2 — App Not Installing
+
+### **Cause**
+Incorrect detection rule.
+
+### **Fix**
+- Update detection rule  
+- Reassign app  
+- Sync device  
+
+### **Ticket Note**
+Win32 app failing due to incorrect detection rule. Updated rule and re-synced device. App installed successfully.
+
+---
+
+## 📝 Scenario 3 — Autopilot Stuck on “Setting up your device”
+
+### **Cause**
+Network restrictions blocking Autopilot endpoints.
+
+### **Fix**
+- Connect to open network  
+- Restart provisioning  
+- Confirm Autopilot profile assignment  
+
+### **Ticket Note**
+Autopilot stuck due to restricted network. Switched to open network and device provisioned successfully.
+
+---
+
+## 📝 Scenario 4 — macOS Device Not Receiving Profiles
+
+### **Cause**
+User not in assigned group.
+
+### **Fix**
+- Add user to correct group  
+- Re-sync device  
+- Confirm profile installation  
+
+### **Ticket Note**
+macOS device not receiving configuration profile due to missing group assignment. Added user and re-synced. Profile applied successfully.
+
+---
+
+# 📚 Related Pages
+
+- Cross‑Platform Support  
+- Security Basics  
+- Identity & Access  
+- Demos & Scenarios  
+- Security Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Device Management section.
 
