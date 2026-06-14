@@ -1,1 +1,229 @@
+# Windows Autopilot
 
+A practical guide to Windows Autopilot provisioning, profile assignment, troubleshooting, and real-world scenarios.  
+This section reflects how modern IT teams deploy and manage Windows devices at scale using cloud-based provisioning.
+
+---
+
+# 🚀 1. What Is Windows Autopilot?
+
+Windows Autopilot is a cloud-based provisioning system that allows organisations to:
+
+- Deploy new Windows devices with zero-touch setup  
+- Automatically join devices to Entra ID  
+- Automatically enrol devices into Intune  
+- Apply apps, policies, and configurations  
+- Customise the Out-of-Box Experience (OOBE)  
+- Reduce imaging and manual setup work  
+
+Autopilot replaces traditional imaging with **cloud-driven provisioning**.
+
+---
+
+# 🧩 2. Autopilot Deployment Workflow
+
+### **1. Device is purchased**
+Vendor provides hardware hash OR IT extracts it manually.
+
+### **2. Hardware hash is uploaded**
+Intune → Devices → Enrolment → Windows Autopilot → Devices → Import.
+
+### **3. Device is assigned an Autopilot profile**
+Profile defines:
+- Join type (Azure AD Join / Hybrid)  
+- User-driven or self-deploying  
+- OOBE customisation  
+- Language/region  
+- Skip privacy settings  
+- Automatically enrol into Intune  
+
+### **4. User receives device**
+They sign in with their work account.
+
+### **5. Device provisions automatically**
+Apps, policies, profiles, and settings apply.
+
+### **6. Device becomes fully managed**
+Appears in:
+- Entra ID  
+- Intune  
+- Defender for Endpoint (if enabled)  
+
+---
+
+# 🖥️ 3. Autopilot Profile Types
+
+### **User-Driven Mode**
+- Most common  
+- User signs in  
+- Device joins Entra ID  
+- Intune enrolment begins  
+
+### **Self-Deploying Mode**
+- No user interaction  
+- Ideal for kiosks, shared devices, digital signage  
+- Requires TPM 2.0  
+
+### **Pre-Provisioning (White Glove)**
+- IT prepares device before handing to user  
+- Apps and policies install in advance  
+- Reduces user setup time  
+
+---
+
+# 🔧 4. Extracting the Hardware Hash
+
+### **PowerShell Command**
+Run on the device:
+md c:\HWID
+Set-Location c:\HWID
+Get-WindowsAutopilotInfo.ps1 -OutputFile AutopilotHWID.csv
+
+
+Upload the CSV to Intune.
+
+### **Common Issues**
+- Script not run as admin  
+- Device already registered  
+- TPM not ready  
+- Incorrect CSV format  
+
+---
+
+# ⚙️ 5. Autopilot Profile Settings
+
+### **Key Settings**
+- Deployment mode (user-driven / self-deploying)  
+- Join type (Azure AD / Hybrid)  
+- Skip privacy settings  
+- Skip EULA  
+- Automatically configure keyboard  
+- Language/region  
+- Allow White Glove  
+
+### **Best Practice**
+Use **Azure AD Join** unless you have legacy on-prem requirements.
+
+---
+
+# 🛠️ 6. Troubleshooting Autopilot
+
+### **1. Device not assigned to profile**
+- Check Autopilot devices list  
+- Check group assignment  
+- Sync device  
+
+### **2. Autopilot stuck on “Setting up your device”**
+Common causes:
+- Network restrictions  
+- Missing Autopilot endpoints  
+- Proxy issues  
+- Slow app installs  
+
+### **3. Device not joining Entra ID**
+- Incorrect profile  
+- TPM issues  
+- Time/date mismatch  
+- Licensing issues  
+
+### **4. Apps not installing during provisioning**
+- Win32 app detection rule failure  
+- App dependency missing  
+- Assignment issues  
+
+### **5. White Glove failing**
+- TPM not ready  
+- Network restrictions  
+- Device not registered  
+
+---
+
+# 🌐 7. Required Network Endpoints
+
+Autopilot requires access to:
+
+- `*.microsoft.com`  
+- `*.windowsupdate.com`  
+- `*.azureedge.net`  
+- `*.msftauth.net`  
+- `*.msauth.net`  
+
+Blocked endpoints = failed provisioning.
+
+---
+
+# 🧪 8. Real-World Autopilot Scenarios
+
+## 📝 Scenario 1 — Device Not Assigned to Profile
+
+### **Cause**
+Device imported but not assigned to a group.
+
+### **Fix**
+- Add device to Autopilot group  
+- Assign profile  
+- Sync device  
+
+### **Ticket Note**
+Autopilot failed due to missing group assignment. Added device to correct group and synced. Profile applied successfully.
+
+---
+
+## 📝 Scenario 2 — Autopilot Stuck on “Setting up your device”
+
+### **Cause**
+Network blocking Autopilot endpoints.
+
+### **Fix**
+- Switch to open network  
+- Restart provisioning  
+- Confirm profile assignment  
+
+### **Ticket Note**
+Autopilot stuck due to restricted network. Switched to open network and provisioning completed successfully.
+
+---
+
+## 📝 Scenario 3 — Apps Not Installing During Provisioning
+
+### **Cause**
+Incorrect Win32 detection rule.
+
+### **Fix**
+- Update detection rule  
+- Reassign app  
+- Re-run provisioning  
+
+### **Ticket Note**
+Win32 app failed during Autopilot due to incorrect detection rule. Updated rule and re-provisioned device. App installed successfully.
+
+---
+
+## 📝 Scenario 4 — White Glove Pre-Provisioning Failure
+
+### **Cause**
+TPM not ready.
+
+### **Fix**
+- Reboot device  
+- Check TPM status  
+- Retry pre-provisioning  
+
+### **Ticket Note**
+White Glove failed due to TPM not initialised. Restarted device and TPM became ready. Pre-provisioning completed successfully.
+
+---
+
+# 📚 Related Pages
+
+- Intune & Device Management  
+- Cross‑Platform Support  
+- Security Basics  
+- Identity & Access  
+- Demos & Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Device Management section.
