@@ -1,1 +1,278 @@
+# Device Compliance Deep Dive
 
+A comprehensive guide to understanding, configuring, and troubleshooting device compliance in Microsoft Intune.  
+This section explains how compliance interacts with Conditional Access, risk-based access, and real-world device behaviour across Windows, macOS, iOS, and Android.
+
+---
+
+# 📌 1. What Is Device Compliance?
+
+Device compliance determines whether a device meets the organisation’s security requirements.  
+Compliance is evaluated by:
+
+- Intune compliance policies  
+- Device health attestation  
+- OS security posture  
+- Antivirus status  
+- Encryption status  
+- Update level  
+- Jailbreak/root detection  
+- Conditional Access rules  
+
+A device that is **non-compliant** may be:
+
+- blocked from accessing corporate apps  
+- forced into limited access  
+- required to remediate issues  
+- flagged as high-risk  
+
+---
+
+# 🧩 2. How Compliance Works (Architecture Overview)
+
+### **1. Device reports its state to Intune**
+- Encryption  
+- Antivirus  
+- OS version  
+- Secure boot  
+- TPM  
+- Jailbreak/root status  
+
+### **2. Intune evaluates compliance policies**
+Examples:
+- Require BitLocker  
+- Require secure boot  
+- Require OS version ≥ X  
+- Require antivirus enabled  
+- Block rooted devices  
+
+### **3. Compliance state is written to Entra ID**
+Entra ID stores:
+- Compliant  
+- Non-compliant  
+- Not evaluated  
+
+### **4. Conditional Access uses compliance state**
+CA policies enforce:
+- Block access if non-compliant  
+- Require MFA  
+- Require compliant device  
+- Require approved app  
+
+### **5. User is granted or denied access**
+Access is based on:
+- Device compliance  
+- User risk  
+- Sign-in risk  
+- App sensitivity  
+
+---
+
+# 🔐 3. Compliance vs Conditional Access vs Risk-Based Access
+
+### **Compliance Policies**
+- Device-level  
+- Set in Intune  
+- Technical requirements (BitLocker, OS version, AV)  
+
+### **Conditional Access**
+- Access-level  
+- Set in Entra ID  
+- Enforces compliance  
+- Controls app access  
+
+### **Risk-Based Access**
+- Identity-level  
+- Uses Microsoft Defender for Identity + Entra ID Protection  
+- Detects risky sign-ins  
+- Detects compromised accounts  
+
+### **How They Work Together**
+- Compliance says: *Is the device healthy?*  
+- CA says: *Should this device be allowed to access the resource?*  
+- Risk says: *Is this user behaving safely?*  
+
+---
+
+# ⚙️ 4. Compliance Policy Types
+
+### **Windows**
+- Require BitLocker  
+- Require Secure Boot  
+- Require TPM  
+- Require Defender Antivirus  
+- Require Firewall  
+- Require OS version  
+- Require password/PIN  
+
+### **macOS**
+- Require FileVault  
+- Require OS version  
+- Require password  
+- Require Gatekeeper  
+- Require XProtect  
+
+### **iOS/iPadOS**
+- Block jailbroken devices  
+- Require passcode  
+- Require OS version  
+- Require encryption  
+
+### **Android**
+- Block rooted devices  
+- Require screen lock  
+- Require Play Protect  
+- Require OS version  
+
+---
+
+# 🛠️ 5. Troubleshooting Compliance Issues
+
+## **1. Device shows “Not Compliant”**
+Common causes:
+- BitLocker disabled  
+- OS out of date  
+- Antivirus disabled  
+- Firewall disabled  
+- Device not synced  
+
+Fix:
+- Enable required settings  
+- Sync device  
+- Reboot  
+
+---
+
+## **2. Device stuck in “Not Evaluated”**
+Causes:
+- Device not checking in  
+- MDM enrolment broken  
+- Company Portal not installed (mobile)  
+- Intune Management Extension failure  
+
+Fix:
+- Restart device  
+- Reinstall Company Portal  
+- Reinstall Intune Management Extension  
+- Check network connectivity  
+
+---
+
+## **3. Conditional Access blocking access**
+Symptoms:
+- “Your device is not compliant”  
+- “You can’t access this resource”  
+
+Causes:
+- CA requires compliant device  
+- Compliance policy not met  
+- Device not synced  
+
+Fix:
+- Check CA policy  
+- Check compliance policy  
+- Sync device  
+- Review sign-in logs  
+
+---
+
+## **4. BitLocker not reporting**
+Causes:
+- Encryption not started  
+- TPM not ready  
+- Drive not fully encrypted  
+- User cancelled encryption  
+
+Fix:
+- Start BitLocker  
+- Check TPM  
+- Allow encryption to complete  
+
+---
+
+## **5. macOS FileVault not reporting**
+Causes:
+- User hasn’t enabled FileVault  
+- Key escrow failed  
+- macOS version unsupported  
+
+Fix:
+- Enable FileVault  
+- Escrow key to Intune  
+- Update macOS  
+
+---
+
+# 🧪 6. Real-World Compliance Scenarios
+
+## **Scenario 1 — User Cannot Access Teams**
+**Cause:** Device non-compliant due to missing OS updates.  
+**Fix:** Update OS → Sync device → Access restored.  
+**Ticket Note:** Device non-compliant due to outdated OS. Guided user through updates. Compliance restored.
+
+---
+
+## **Scenario 2 — Device Marked Non-Compliant After Password Change**
+**Cause:** Device token expired.  
+**Fix:** Sign out → Sign in → Sync device.  
+**Ticket Note:** Device token expired after password reset. User re-authenticated and synced. Compliance restored.
+
+---
+
+## **Scenario 3 — Android Device Blocked**
+**Cause:** Play Protect disabled.  
+**Fix:** Enable Play Protect → Sync.  
+**Ticket Note:** Android non-compliant due to Play Protect disabled. Enabled and synced. Access restored.
+
+---
+
+## **Scenario 4 — macOS Device Not Receiving Compliance Policies**
+**Cause:** User not in assignment group.  
+**Fix:** Add user → Sync device.  
+**Ticket Note:** macOS device missing compliance profile due to group assignment. Added user and synced.
+
+---
+
+# 🌐 7. Compliance Logs & Diagnostics
+
+### **Windows Logs**
+C:\ProgramData\Microsoft\IntuneManagementExtension\Logs
+
+### **Event Viewer**
+Applications and Services Logs → Microsoft → Windows → DeviceManagement-Enterprise-Diagnostics-Provider
+
+### **macOS Logs**
+- Console → search “mdmclient”  
+- `/var/log/install.log`  
+
+### **Mobile Logs**
+- Company Portal → Help → Send logs  
+
+---
+
+# 🔄 8. Compliance Remediation Workflow (Best Practice)
+
+1. Identify non-compliance reason  
+2. Sync device  
+3. Apply required fix  
+4. Re-sync  
+5. Validate compliance in Intune  
+6. Validate access in Entra ID  
+7. Document remediation  
+8. Educate user  
+
+---
+
+# 📚 Related Pages
+
+- Intune & Device Management  
+- Autopilot  
+- Identity & Access  
+- Security Basics  
+- Security Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Device Management section.
