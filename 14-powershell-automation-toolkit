@@ -1,1 +1,232 @@
+# PowerShell Automation Toolkit
+
+A practical collection of PowerShell scripts and automation workflows used in real IT Support, Modern Workplace, and Security environments.  
+This toolkit demonstrates evidence-driven troubleshooting, repeatable processes, and automation-first thinking.
+
+---
+
+# 📌 1. Why PowerShell Matters
+
+PowerShell is the backbone of modern IT automation.  
+It enables:
+
+- Faster troubleshooting  
+- Consistent results  
+- Bulk operations  
+- Evidence collection  
+- Integration with Intune, Entra ID, and Microsoft Graph  
+- Secure, auditable workflows  
+
+This toolkit includes scripts that reflect real-world tasks performed by IT Support and Security teams.
+
+---
+
+# 🖥️ 2. System Information & Evidence Collection
+
+## **2.1 Collect System Information**
+Gathers hardware, OS, network, and process data.
+
+Collects key system information for troubleshooting
+$OutputPath = "$env:USERPROFILE\Desktop\system-info.txt"
+
+"=== SYSTEM INFORMATION REPORT ===" | Out-File $OutputPath
+"Generated: $(Get-Date)" | Out-File $OutputPath -Append
+"" | Out-File $OutputPath -Append
+
+"--- Computer Info ---" | Out-File $OutputPath -Append
+Get-ComputerInfo | Out-File $OutputPath -Append
+
+"--- Installed Hotfixes ---" | Out-File $OutputPath -Append
+Get-HotFix | Out-File $OutputPath -Append
+
+"--- Network Configuration ---" | Out-File $OutputPath -Append
+ipconfig /all | Out-File $OutputPath -Append
+
+"--- Running Processes ---" | Out-File $OutputPath -Append
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 | Out-File $OutputPath -Append
+
+Write-Host "System information saved to $OutputPath"
+
+---
+
+## **2.2 Collect Event Logs**
+Useful for diagnosing crashes, app failures, and system instability.
+
+Collects recent system and application event logs
+$OutputPath = "$env:USERPROFILE\Desktop\eventlogs.txt"
+
+"=== EVENT LOG REPORT ===" | Out-File $OutputPath
+"Generated: $(Get-Date)" | Out-File $OutputPath -Append
+"" | Out-File $OutputPath -Append
+
+"--- System Errors (Last 50) ---" | Out-File $OutputPath -Append
+Get-EventLog -LogName System -EntryType Error -Newest 50 | Out-File $OutputPath -Append
+
+"--- Application Errors (Last 50) ---" | Out-File $OutputPath -Append
+Get-EventLog -LogName Application -EntryType Error -Newest 50 | Out-File $OutputPath -Append
+
+Write-Host "Event logs saved to $OutputPath"
+
+---
+
+# 🌐 3. Network Diagnostics
+
+## **3.1 Network Troubleshooting Script**
+Runs connectivity tests, DNS checks, and traceroutes.
+
+Runs basic network diagnostics and outputs results
+$OutputPath = "$env:USERPROFILE\Desktop\network-diagnostics.txt"
+
+"=== NETWORK DIAGNOSTICS REPORT ===" | Out-File $OutputPath
+"Generated: $(Get-Date)" | Out-File $OutputPath -Append
+"" | Out-File $OutputPath -Append
+
+"--- IP Configuration ---" | Out-File $OutputPath -Append
+ipconfig /all | Out-File $OutputPath -Append
+
+"--- Ping Test (8.8.8.8) ---" | Out-File $OutputPath -Append
+ping 8.8.8.8 -n 10 | Out-File $OutputPath -Append
+
+"--- Ping Test (google.com) ---" | Out-File $OutputPath -Append
+ping google.com -n 10 | Out-File $OutputPath -Append
+
+"--- Traceroute (google.com) ---" | Out-File $OutputPath -Append
+tracert google.com | Out-File $OutputPath -Append
+
+Write-Host "Network diagnostics saved to $OutputPath"
+
+---
+
+# 🧹 4. System Cleanup & Maintenance
+
+## **4.1 Clean Temporary Files**
+Improves performance and frees disk space.
+
+Cleans temporary files to improve performance
+$Temp = "$env:TEMP\"
+$WindowsTemp = "C:\Windows\Temp\"
+
+Write-Host "Cleaning temporary files..."
+
+Remove-Item $Temp -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item $WindowsTemp -Recurse -Force -ErrorAction SilentlyContinue
+
+Write-Host "Temporary files cleaned successfully."
+
+---
+
+# 👤 5. User Account & Identity Tools
+
+## **5.1 Check Local User Accounts**
+Useful for privilege escalation investigations.
+
+Get-LocalUser | Select-Object Name, Enabled, LastLogon
+
+---
+
+## **5.2 Check Group Membership**
+Detects unexpected admin access.
+
+Get-LocalGroupMember -Group "Administrators"
+
+---
+
+# 🔐 6. Security & Compliance Scripts
+
+## **6.1 Check BitLocker Status**
+
+Get-BitLockerVolume | Select-Object MountPoint, VolumeStatus, EncryptionPercentage
+
+---
+
+## **6.2 Check Defender Status**
+
+Get-MpComputerStatus | Select-Object AMServiceEnabled, AntivirusEnabled, RealTimeProtectionEnabled
+
+---
+
+# ☁️ 7. Intune & Graph API Automation (Advanced)
+
+## **7.1 Connect to Microsoft Graph**
+Connect-MgGraph -Scopes "Device.Read.All","User.Read.All"
+
+---
+
+## **7.2 List Intune Devices**
+
+Get-MgDeviceManagementManagedDevice | Select-Object deviceName, operatingSystem, complianceState
+
+---
+
+## **7.3 Force Intune Sync (Windows)**
+Invoke-Command -ScriptBlock { Start-Process "intunemanagementextension.exe" -ArgumentList "-c" }
+
+---
+
+# 🧪 8. Real-World Automation Scenarios
+
+## **Scenario 1 — User Reports Slow PC**
+Run:
+- system-info.ps1  
+- cleanup-temp.ps1  
+
+Outcome:
+- Identified high CPU process  
+- Cleaned temp files  
+- Improved performance  
+
+---
+
+## **Scenario 2 — Device Not Compliant**
+Run:
+- BitLocker check  
+- Defender status  
+- OS version check  
+
+Outcome:
+- Found encryption disabled  
+- Enabled BitLocker  
+- Compliance restored  
+
+---
+
+## **Scenario 3 — Network Issues**
+Run:
+- network-diagnostics.ps1  
+
+Outcome:
+- DNS failure detected  
+- Reset DNS  
+- Connectivity restored  
+
+---
+
+# 🧭 9. Best Practices for PowerShell in IT Support
+
+- Always run scripts in a test environment first  
+- Add comments to every script  
+- Use `-WhatIf` for destructive commands  
+- Log outputs for evidence  
+- Use functions for reusability  
+- Avoid running scripts from unknown sources  
+- Validate user input  
+- Use Microsoft Graph for cloud automation  
+
+---
+
+# 📚 Related Pages
+
+- Windows Support  
+- Intune & Device Management  
+- Autopilot  
+- Security Basics  
+- Identity & Access  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Automation & Tools section.
+
+
 
