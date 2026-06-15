@@ -1,55 +1,6 @@
-# IT Support Portfolio  
-A structured, professional portfolio demonstrating real-world IT Support, Microsoft 365, networking, identity, troubleshooting, and security fundamentals.  
-Designed to showcase job‑ready skills for **1st Line Support, Service Desk Technician, IT Technician, and Security Support** roles.
-
----
-
-# 📌 Overview
-
-This portfolio brings together hands‑on troubleshooting, structured documentation, ITIL‑aligned workflows, and security‑focused practices.  
-It reflects the way real IT teams work — clear, methodical, evidence‑driven, and user‑focused.
-
-Each section includes:
-- Practical troubleshooting steps  
-- Realistic scenarios  
-- Model ticket notes  
-- Tools and commands  
-- Cross‑platform workflows  
-- Security considerations  
-
----
-
-# 📁 Portfolio Contents
-
-### **01 — Windows Support**
-Troubleshooting Windows 10/11 issues including performance, updates, networking, printers, profiles, and PowerShell diagnostics.
-
-### **02 — Microsoft 365 Support**
-Outlook, Teams, OneDrive, MFA, licensing, Admin Centre tasks, and common user issues.
-
-### **03 — Networking Basics**
-DNS, DHCP, NAT, routing, Wi‑Fi troubleshooting, VPN issues, and network diagnostics.
-
-### **04 — Identity & Access**
-Entra ID (Azure AD), MFA, Conditional Access, account lockouts, password resets, and IAM troubleshooting.
-
-### **05 — Ticketing Scenarios**
-ITIL‑aligned sample tickets with clear documentation, communication, root cause analysis, and escalation paths.
-
-### **06 — Cross‑Platform Support**
-Windows, macOS, Linux basics, iOS/Android, browser troubleshooting, and cross‑platform workflows.
-
-### **07 — Security Awareness**
-User‑focused security guidance: phishing, passwords, MFA, safe browsing, device safety, and reporting procedures.
-
-### **08 — Demos & Scenarios**
-Practical troubleshooting demos, walkthroughs, and real-world examples across Windows, M365, networking, identity, and security.
-
-### **09 — Security Basics**
-Technical security fundamentals: CIA triad, Zero Trust, identity security, EDR, network security, email security, and incident response.
-
-### **10 — Security Scenarios**
-Realistic security incidents: phishing, MFA fatigue, OAuth abuse, malware, impossible travel, ransomware behaviour, and device compliance.
+# IT Support & Security Portfolio  
+A structured, professional portfolio demonstrating practical IT Support, Modern Workplace, and Security skills.  
+This repository showcases real troubleshooting workflows, documentation, automation, and cloud-first practices aligned with Microsoft technologies.
 
 ---
 
@@ -57,57 +8,151 @@ Realistic security incidents: phishing, MFA fatigue, OAuth abuse, malware, impos
 
 This portfolio demonstrates:
 
-- Strong troubleshooting and diagnostic skills  
-- Clear, structured documentation  
-- ITIL‑aligned ticket handling  
-- Evidence‑driven problem solving  
-- Ability to explain technical concepts  
-- Cross‑platform support capability  
-- A solid foundation for cybersecurity and SOC roles  
-
-It consolidates hands‑on labs, real troubleshooting experience, and structured learning into one professional, employer‑ready resource.  
-
-
----
-
-# 🔗 Supporting Repositories
-
-This portfolio is supported by additional specialised projects, including:
-
-- Windows 11 Secure Setup & Troubleshooting  
-- M365 Support & Troubleshooting  
-- Cross‑Platform Troubleshooting Toolkit  
-- IAM / Auth0 Admin Lab  
-- Security Awareness Tools  
-- SOC & Cybersecurity Labs  
-
----
-
-# 📈 Roadmap
-
-Planned additions:
-
-- Intune & Device Management  
-- Autopilot  
-- SOC Fundamentals  
+- Practical IT Support troubleshooting  
+- Modern Workplace skills (Intune, Autopilot, Compliance)  
+- Identity & Access fundamentals  
+- Security awareness and incident handling  
 - PowerShell automation  
-- Diagrams & architecture maps  
-- Evidence logs & screenshots  
-- Additional labs and projects  
+- Cloud & AI-assisted workflows  
+- Real-world ticketing scenarios  
+- Cross-platform support  
+- Clear, structured documentation  
+
+It is designed to reflect the work of a **1st Line / Service Desk / Modern Workplace / Security Support** professional.
 
 ---
 
-# 👤 Author
+# 📁 Repository Structure
 
-**K. Johnston**  
-IT Support Technician | CompTIA Certified | Cybersecurity Analyst (in progress)  
-Margate, Kent, UK  
+01-windows-support
+02-m365-support
+03-networking-basics
+04-identity-and-access
+05-ticketing-scenarios
+06-cross-platform-support
+07-security-awareness
+08-demos-and-scenarios
+09-security-basics
+10-security-scenarios
+11-intune-and-device-management
+12-autopilot
+13-device-compliance-deep-dive
+14-powershell-automation-toolkit
+15-cloud-and-ai-for-it-support-and-security
+16-ai-tools-for-troubleshooting
 
-
+Each folder contains structured, scenario-driven documentation designed to mirror real IT workflows.
 
 ---
 
-# ✔️ Status
+# 🧩 Key Skills Demonstrated
 
-This portfolio is actively maintained and continuously expanding as new skills, labs, and scenarios are added.
+### **IT Support**
+- Windows troubleshooting  
+- M365 admin  
+- Networking fundamentals  
+- Identity & Access  
+- Ticketing workflows  
+- Cross-platform support  
+
+### **Modern Workplace**
+- Intune device management  
+- Autopilot provisioning  
+- Device compliance  
+- Conditional Access  
+- App deployment  
+- Configuration profiles  
+
+### **Security**
+- Security awareness  
+- Incident response basics  
+- Security scenarios  
+- Risk-based access  
+- Defender fundamentals  
+
+### **Automation**
+- PowerShell scripting  
+- Evidence collection  
+- Log analysis  
+- Intune/Graph API automation  
+
+### **Cloud & AI**
+- Cloud fundamentals  
+- Shared responsibility model  
+- AI-assisted troubleshooting  
+- Ethical & safe AI usage  
+- AI tools comparison  
+
+---
+
+# 🛠️ Tools & Technologies
+
+- Windows 10/11  
+- Microsoft 365 Admin  
+- Entra ID (Azure AD)  
+- Intune  
+- Autopilot  
+- Conditional Access  
+- Defender for Endpoint  
+- PowerShell  
+- Microsoft Graph  
+- AI tools (Copilot, Claude, Perplexity, GitHub Copilot)  
+
+---
+
+# 🧪 Scenario-Based Learning
+
+This portfolio includes real-world scenarios such as:
+
+- Device not compliant  
+- Autopilot stuck during provisioning  
+- MFA failures  
+- Network connectivity issues  
+- Email delivery problems  
+- Security alert triage  
+- Cross-platform troubleshooting  
+- PowerShell automation tasks  
+
+Each scenario includes:
+- Symptoms  
+- Root cause  
+- Fix  
+- Ticket note  
+- Preventative guidance  
+
+---
+
+# 🤖 AI-Assisted Workflows
+
+This portfolio demonstrates responsible use of AI for:
+
+- Troubleshooting  
+- Log interpretation  
+- PowerShell generation  
+- Documentation  
+- Security analysis  
+
+With emphasis on:
+- Redaction  
+- Validation  
+- Ethical use  
+- Avoiding hallucinations  
+- Maintaining human oversight  
+
+---
+
+# 🚀 Future Enhancements
+
+- Architecture diagrams (optional)  
+- SOC Fundamentals  
+- Skills Matrix  
+- Portfolio Index  
+- Additional automation scripts  
+
+---
+
+# 📬 Contact
+
+This portfolio is actively maintained and expanded as part of ongoing professional development in IT Support, Modern Workplace, and Security.
+
 
