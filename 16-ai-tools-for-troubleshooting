@@ -1,1 +1,305 @@
+# AI Tools for Troubleshooting
+
+A practical guide to the AI tools commonly used in IT Support, Modern Workplace, and Security roles.  
+This section explains what each tool is good at, its limitations, ethical considerations, and how to use AI safely in professional environments.
+
+---
+
+# 🤖 1. Why AI Matters in IT Support & Security
+
+AI has become a core part of modern troubleshooting.  
+It helps technicians:
+
+- Diagnose issues faster  
+- Interpret logs  
+- Generate PowerShell  
+- Summarise documentation  
+- Improve communication  
+- Reduce cognitive load  
+- Learn new technologies  
+
+But AI must be used **responsibly**, with awareness of risks and limitations.
+
+---
+
+# 🧰 2. AI Tools Used in IT Troubleshooting
+
+Below is a curated list of the most useful AI tools for IT Support and Security, with pros, cons, and ideal use cases.
+
+---
+
+# 2.1 Microsoft Copilot (Primary Tool)
+
+### **Best for:**
+- Windows troubleshooting  
+- M365 admin  
+- Intune  
+- Autopilot  
+- Networking  
+- PowerShell  
+- Security analysis  
+- Documentation  
+
+### **Pros**
+- Deep Microsoft ecosystem knowledge  
+- Enterprise‑aligned  
+- Strong guardrails  
+- Safe by design  
+- No destructive commands  
+
+### **Cons**
+- Won’t guess missing context  
+- Won’t generate unsafe commands  
+
+### **Ideal Use Cases**
+- Explaining Windows errors  
+- Interpreting Intune logs  
+- Drafting ticket notes  
+- PowerShell assistance  
+- Security analysis  
+
+---
+
+# 2.2 ChatGPT
+
+### **Best for:**
+- Code generation  
+- Linux troubleshooting  
+- Concept explanations  
+- Documentation rewriting  
+
+### **Pros**
+- Very flexible  
+- Strong coding ability  
+- Good at rewriting content  
+
+### **Cons**
+- Hallucination risk  
+- May generate unsafe commands  
+- Not Microsoft‑specific  
+
+### **Ideal Use Cases**
+- PowerShell prototypes  
+- Bash scripts  
+- Learning new concepts  
+
+---
+
+# 2.3 Claude
+
+### **Best for:**
+- Long documents  
+- Policy analysis  
+- Log interpretation  
+- Writing and summarising  
+
+### **Pros**
+- Excellent long‑context reasoning  
+- Very safe  
+- Great for documentation  
+
+### **Cons**
+- Not specialised in Microsoft ecosystem  
+- Sometimes overly cautious  
+
+### **Ideal Use Cases**
+- Reviewing long logs  
+- Analysing policies  
+- Writing reports  
+
+---
+
+# 2.4 Perplexity
+
+### **Best for:**
+- Research  
+- Quick answers  
+- Documentation lookup  
+- Comparing solutions  
+
+### **Pros**
+- Fast  
+- Cites sources  
+- Great for “what does this error mean?”  
+
+### **Cons**
+- Not suitable for sensitive data  
+- Sometimes shallow answers  
+
+### **Ideal Use Cases**
+- Looking up Microsoft docs  
+- Comparing troubleshooting steps  
+- Researching error codes  
+
+---
+
+# 2.5 GitHub Copilot
+
+### **Best for:**
+- PowerShell  
+- Python  
+- Bash  
+- Automation scripts  
+
+### **Pros**
+- Learns your coding style  
+- Great for repetitive tasks  
+- Excellent for script generation  
+
+### **Cons**
+- Not a troubleshooting assistant  
+- Requires VS Code  
+
+### **Ideal Use Cases**
+- Building automation scripts  
+- Improving PowerShell functions  
+- Writing reusable modules  
+
+---
+
+# 2.6 Defender Copilot / Security Copilot (Enterprise)
+
+### **Best for:**
+- Incident response  
+- Threat analysis  
+- Log correlation  
+- MITRE mapping  
+
+### **Pros**
+- Uses Microsoft threat intelligence  
+- Very accurate  
+- Designed for SOC teams  
+
+### **Cons**
+- Enterprise only  
+- Not available to individuals  
+
+### **Ideal Use Cases**
+- Investigating alerts  
+- Mapping threats to MITRE  
+- Analysing suspicious behaviour  
+
+---
+
+# ⚖️ 3. Ethical Use of AI in IT & Security
+
+AI must be used responsibly.  
+Key ethical principles:
+
+### ✔ Privacy  
+Never paste sensitive data into public AI tools.
+
+### ✔ Transparency  
+If AI helps produce documentation, you still review it.
+
+### ✔ Responsibility  
+AI assists — humans decide.
+
+### ✔ Fairness  
+Avoid bias in security decisions.
+
+### ✔ Safety  
+Validate all commands before running them.
+
+---
+
+# 🔐 4. Security Risks & How to Mitigate Them
+
+## **4.1 Data Leakage**
+Risk:
+- Copy/pasting logs with usernames  
+- Sharing internal URLs  
+- Exposing device names  
+
+Mitigation:
+- Redact everything  
+- Use placeholders  
+- Use enterprise AI tools  
+
+---
+
+## **4.2 Unsafe Commands**
+Risk:
+- AI suggests destructive commands  
+- AI misunderstands context  
+
+Mitigation:
+- Ask AI to explain commands  
+- Test in a VM  
+- Use `-WhatIf`  
+
+---
+
+## **4.3 Incorrect Troubleshooting Steps**
+Risk:
+- AI gives wrong diagnosis  
+- AI assumes too much  
+
+Mitigation:
+- Cross-check with documentation  
+- Validate with your own knowledge  
+
+---
+
+## **4.4 Over-Reliance**
+Risk:
+- Skills stagnate  
+- You stop thinking critically  
+
+Mitigation:
+- Use AI to learn  
+- Ask “why”  
+- Practice manual troubleshooting  
+
+---
+
+# 🧪 5. Real-World AI Troubleshooting Scenarios
+
+## **Scenario 1 — Interpreting Intune Logs**
+You collect logs → redact → ask AI → AI identifies a detection rule failure.  
+You validate → fix → app installs.
+
+---
+
+## **Scenario 2 — PowerShell Script Generation**
+You need a script to check BitLocker status across 50 devices.  
+AI drafts it → you review → test → deploy.
+
+---
+
+## **Scenario 3 — Security Alert Triage**
+Defender alert shows suspicious PowerShell.  
+AI explains the command → maps to MITRE → you escalate.
+
+---
+
+## **Scenario 4 — User Communication**
+AI rewrites a technical explanation into a user-friendly message.
+
+---
+
+# 🧭 6. Best Practices for Using AI in IT Support
+
+- Redact logs before sharing  
+- Validate commands  
+- Use AI for learning, not replacing thinking  
+- Keep humans in the loop  
+- Use enterprise AI tools when possible  
+- Document everything  
+
+---
+
+# 📚 Related Pages
+
+- Cloud & AI  
+- PowerShell Automation Toolkit  
+- Security Basics  
+- Identity & Access  
+- Intune & Device Management  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the AI & Automation section.
 
