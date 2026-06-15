@@ -1,1 +1,290 @@
+# Cloud & AI for IT Support & Security
+
+A practical guide to how cloud technologies and AI tools support modern IT operations, troubleshooting, automation, and security.  
+This section explains cloud fundamentals, AI-assisted workflows, ethical considerations, and safe usage practices for IT and security teams.
+
+---
+
+# ☁️ 1. Cloud Fundamentals for IT Support
+
+Modern IT environments rely heavily on cloud services.  
+Understanding cloud concepts is essential for troubleshooting identity, access, device management, and security issues.
+
+---
+
+# 1.1 Cloud Service Models
+
+### **SaaS – Software as a Service**
+Applications delivered over the internet.  
+Examples:
+- Microsoft 365  
+- Teams  
+- Outlook  
+- OneDrive  
+
+### **PaaS – Platform as a Service**
+Platforms for building and deploying apps.  
+Examples:
+- Azure App Service  
+- Azure SQL  
+
+### **IaaS – Infrastructure as a Service**
+Virtual machines, networks, storage.  
+Examples:
+- Azure VMs  
+- Azure Virtual Networks  
+
+---
+
+# 1.2 Shared Responsibility Model
+
+### **Microsoft is responsible for:**
+- Physical datacentres  
+- Network infrastructure  
+- Hypervisors  
+- Hardware security  
+
+### **You (the organisation) are responsible for:**
+- Identity  
+- Access control  
+- Device compliance  
+- Data protection  
+- Conditional Access  
+- Application configuration  
+
+This model is critical for understanding where issues originate.
+
+---
+
+# 1.3 Identity as the New Perimeter
+
+In cloud environments, **identity replaces the traditional network perimeter**.
+
+Key components:
+- Entra ID (Azure AD)  
+- MFA  
+- Conditional Access  
+- Device compliance  
+- Risk-based access  
+- Zero Trust  
+
+Troubleshooting cloud issues almost always involves identity.
+
+---
+
+# 🤖 2. AI in IT Support
+
+AI tools can significantly improve troubleshooting speed, accuracy, and documentation quality — when used responsibly.
+
+---
+
+# 2.1 How AI Helps IT Support
+
+### ✔ Faster troubleshooting  
+AI can interpret logs, error messages, and symptoms.
+
+### ✔ Better documentation  
+AI can rewrite, summarise, or structure notes.
+
+### ✔ Improved communication  
+AI can draft clear user-facing messages.
+
+### ✔ Learning & upskilling  
+AI explains concepts in simple terms.
+
+### ✔ PowerShell assistance  
+AI helps generate, debug, and optimise scripts.
+
+---
+
+# 2.2 AI Tools Commonly Used in IT Support
+
+### **Microsoft Copilot (your main tool)**
+Best for:
+- Windows  
+- M365  
+- Intune  
+- PowerShell  
+- Security  
+- Troubleshooting  
+
+### **Claude**
+Best for:
+- Long documents  
+- Policy analysis  
+- Log interpretation  
+- Writing  
+
+### **Perplexity**
+Best for:
+- Research  
+- Quick answers  
+- Documentation lookup  
+
+### **ChatGPT**
+Best for:
+- Code generation  
+- Concept explanations  
+- Linux troubleshooting  
+
+### **GitHub Copilot**
+Best for:
+- PowerShell  
+- Python  
+- Automation scripts  
+
+---
+
+# 2.3 AI-Assisted Troubleshooting Workflow
+
+1. Gather symptoms  
+2. Collect logs  
+3. Redact sensitive data  
+4. Ask AI for interpretation  
+5. Validate suggestions  
+6. Apply fix  
+7. Document resolution  
+8. Use AI to polish documentation  
+
+AI supports the process — it does not replace your judgement.
+
+---
+
+# 🔐 3. AI in Security Operations
+
+AI is increasingly used in security for:
+
+- Threat detection  
+- Log correlation  
+- Alert triage  
+- Incident response  
+- Behaviour analysis  
+- MITRE ATT&CK mapping  
+
+### Examples:
+- Microsoft Defender Copilot  
+- Sentinel AI features  
+- Defender for Endpoint automated investigation  
+
+AI helps SOC teams work faster and reduce noise.
+
+---
+
+# ⚠️ 4. Risks & Limitations of AI
+
+AI is powerful — but not perfect.  
+Understanding its limitations is essential for safe use.
+
+---
+
+# 4.1 Hallucinations
+
+AI may generate:
+- Incorrect commands  
+- Wrong troubleshooting steps  
+- Misinterpreted logs  
+- Overconfident answers  
+
+**Mitigation:**  
+Always validate commands and cross-check with documentation.
+
+---
+
+# 4.2 Data Leakage
+
+Risks:
+- Copy/pasting logs with usernames  
+- Sharing internal URLs  
+- Exposing device names  
+- Sharing tenant IDs  
+
+**Mitigation:**  
+Redact everything:
+- `<user>`  
+- `<device>`  
+- `<ip>`  
+- `<tenant>`  
+
+---
+
+# 4.3 Over-Reliance
+
+AI should support your thinking — not replace it.
+
+**Mitigation:**  
+- Ask “why”  
+- Verify steps  
+- Learn from the output  
+
+---
+
+# 4.4 Ethical Considerations
+
+### ✔ Transparency  
+If AI helps produce documentation, you still review it.
+
+### ✔ Fairness  
+Avoid bias in security decisions.
+
+### ✔ Responsibility  
+Never let AI make final decisions on access or security.
+
+### ✔ Privacy  
+Never share sensitive data with public AI tools.
+
+---
+
+# 🛡️ 5. Safe AI Usage for IT & Security
+
+### ✔ Use enterprise AI tools when possible  
+Microsoft Copilot is designed with safety in mind.
+
+### ✔ Redact logs before sharing  
+Never paste raw logs.
+
+### ✔ Validate commands  
+Ask AI to explain what a command does.
+
+### ✔ Use AI for learning  
+Not for blindly executing fixes.
+
+### ✔ Keep humans in the loop  
+AI assists — you decide.
+
+---
+
+# 🧪 6. Real-World AI Scenarios
+
+## **Scenario 1 — AI-Assisted Log Analysis**
+User reports Teams crashes.  
+You collect logs → redact → ask AI → AI identifies GPU driver issue.  
+You validate → update driver → issue resolved.
+
+---
+
+## **Scenario 2 — AI-Assisted PowerShell**
+You need a script to collect BitLocker status from 50 devices.  
+AI drafts the script → you review → test → deploy.
+
+---
+
+## **Scenario 3 — AI-Assisted Security Triage**
+Defender alert shows suspicious PowerShell.  
+AI explains the command → maps to MITRE technique → you escalate.
+
+---
+
+# 📚 Related Pages
+
+- PowerShell Automation Toolkit  
+- Intune & Device Management  
+- Security Basics  
+- Identity & Access  
+- Security Scenarios  
+
+---
+
+# ✔️ Status: Complete
+
+This page forms part of the Cloud & AI section.
 
